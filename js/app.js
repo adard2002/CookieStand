@@ -1,87 +1,84 @@
-'use script';
-console.log('Fishes of Salmon Cookies');
+'use strict';
+console.log('JS should be working');
 
-opHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm'];
-
+var opHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm'];
+console.log('Show me hours of operation: ',hourOfOp);
 
 var storeSeattle = {
   city: 'Seattle',
   minCust: 23,
   maxCust: 65,
-  avgSale: 6.3,
+  avgCookie: 6.3,
   cookiesPerHour: [],
   custPerHour: [],
-  totalCookie: 0,
-
+  totalCookies: 0,
   hourlyCust: function (){
     for (var i = 0; i < opHours.length; i++) {
-      this.custPerHour.push(random(this.minCust,this.maxCust));
+    this.custPerHour.push(random(this.minCust,this.maxCust));  
+    } 
+  }, //closes hourlyCust function
+
+  calcCookiesPerHour: function(){
+    this.hourlyCust();
+    for (var i = 0; i < hourOfOp.length; i++) {
+      //Create a variable to hold the cookies each hour
+      //then, we take the customer per hour that we calculate in the method hourlyCust and multiply is times the avgCookieSale amount that is given to us. We are now rendering numbers in our arrays. 
+      var thisHourTotal = Math.ceil(this.custPerHour[i] * this.avgCookie);
+      console.log('This hour: ' + opHours[i] + ' has a total of ' + thisHourTotal);
+      this.cookiesPerHour.push(thisHourTotal);
+      //this where we will keep running total of cookies.
+      this.totalCookies = this.totalCookies + thisHourTotal;
+      // or we can  write it like this
+      // this.totalCookies += thisHourTotal;
+    }
+  },
+  render(){
+    this.calcCookiesPerHour();
+//render object literal to the page
   }
-}, //closes hourly cust function
-  
-calcCookiesPerHour: function() {
-  this.hourlyCust();
-  for (var i = 0; i < opHours.length; i++) {
-    // create a variable to hold the cookies each hour
-    var hourTotal = Math.ceil(this.customersEachHour[i] * this.avgSale);
-
-    this.cookiesPerHour.push(hourTotal);
-    // this is where we will keep total cookies
-  }
-},
-
-render(){
-  // render object literal to the page
-  this.calcCookiesPerHour();
-},
-
-
+};
+console.log('Show me my first store object: ',storeSeattle);
 storeSeattle.render();
 
 var storeTokyo = {
   city: 'Tokyo',
   minCust: 3,
   maxCust: 24,
-  avgSale: 1.2,
+  avgCookie: 1.2,
   cookiesPerHour: [],
   custPerHour: [],
-  totalCookie: 0,
+  totalCookies: 0
 };
 
-var storeDubia = {
-  city: 'Dubia',
+var storeDubai = {
+  city: 'Dubai',
   minCust: 11,
   maxCust: 38,
-  avgSale: 3.7,
+  avgCookie: 3.7,
   cookiesPerHour: [],
   custPerHour: [],
-  totalCookie: 0,
-}; 
+  totalCookies: 0
+};
 
 var storeParis = {
   city: 'Paris',
   minCust: 20,
   maxCust: 38,
-  avgSale: 2.3,
+  avgCookie: 2.3,
   cookiesPerHour: [],
   custPerHour: [],
-  totalCookie: 0,
-}; 
+  totalCookies: 0
+};
 
 var storeLima = {
   city: 'Lima',
   minCust: 2,
   maxCust: 16,
-  avgSale: 4.6,
+  avgCookie: 4.6,
   cookiesPerHour: [],
   custPerHour: [],
-  totalCookie: 0,
-}; 
-
-
-
-
+  totalCookies: 0
+};
 function random(min, max){
-
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+return Math.floor(Math.random() * (max - min + 1)) + min;
 };
