@@ -1,10 +1,10 @@
-# LAB - Number
+# Lab - 06
 
-## Project Name
+## Cookie Stand
 
 I build an app with a direct and powerful purpose. It does all of the things that it accomplishes well. I should describe the purpose and functionality so those that visit my README understand the app
 
-### Author: Student/Group Name
+### Author: Adara Townsend
 
 ### Links and Resources
 * [submission PR](http://xyz.com)
