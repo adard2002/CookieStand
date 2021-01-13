@@ -12,7 +12,7 @@ function Pet(name, breed, imageName, interests, isGoodWithKids, isGoodWithDogs, 
   this.interests = interests,
   this.isGoodWithKids = isGoodWithKids,
   this.isGoodWithDogs = isGoodWithDogs,
-  this.isGoodWithCats = isGoodWithCats
+  this.isGoodWithCats = isGoodWithCats,
 }
 
 
@@ -67,12 +67,10 @@ Pet.prototype.render = function(){
   img.setAttribute('alt', 'Adopt ' + this.name + 'NOW!, no TODAY!');
   article.appendChild(img);
 
-}; // closes the render prototype 
 
 
 
-
-// Add a Table
+  // Add a Table
   var animalTable = document.getElementById('adoptPets-holder');
   var petRow = document.createElement('tr');
   // create element
@@ -99,6 +97,12 @@ Pet.prototype.render = function(){
   petRow.appendChild(breedCell);
 
   animalTable.appendChild(petRow);
+
+
+}; // closes the render prototype 
+
+
+
 
 
 

@@ -1,6 +1,6 @@
 'use script';
 console.log('Fishes of Salmon Cookies');
-opHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm'];
+var opHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm'];
 var storeSeattle = {
   city: 'Seattle',
   minCust: 23,
@@ -30,16 +30,16 @@ var storeSeattle = {
   render(){
     // render object literal to the page
     this.calcCookiesPerHour();
-  var unorderedList = document.getElementById('seattle');
-  // console.log(unorderedList);
-  for(var i = 0; i < opHours.length; i++){
-    var listItem = document.createElement('li');
-    listItem.textContent = opHours[i] + ': ' + this.cookiesPerHour[i] + ' cookies!';
+    var unorderedList = document.getElementById('seattle');
+    // console.log(unorderedList);
+    for(var i = 0; i < opHours.length; i++){
+      var listItem = document.createElement('li');
+      listItem.textContent = opHours[i] + ': ' + this.cookiesPerHour[i] + ' cookies!';
+      unorderedList.appendChild(listItem);
+    }
+    listItem = document.createElement('li');
+    listItem.textContent = 'Total ' + this.totalCookie + ' cookie!';
     unorderedList.appendChild(listItem);
-  }
-  listItem = document.createElement('li');
-  listItem.textContent = 'Total ' + this.totalCookie + ' cookie!'
-  unorderedList.appendChild(listItem);
   }
 };
 storeSeattle.render();
@@ -51,34 +51,34 @@ var storeTokyo = {
   cookiesPerHour: [],
   custPerHour: [],
   totalCookie: 0,
-hourlyCust: function (){
-  for (var i = 0; i < opHours.length; i++) {
-    this.custPerHour.push(random(this.minCust,this.maxCust));
-  }
-}, 
-calcCookiesPerHour: function() {
-  this.hourlyCust();
-  for (var i = 0; i < opHours.length; i++) {
-    var hourTotal = Math.ceil(this. custPerHour[i] * this.avgSale);
-    this.cookiesPerHour.push(hourTotal);
-    console.log(this.cookiesPerHour);
-    this.totalCookie = this.totalCookie + hourTotal;
-    console.log('total cookies',this.totalCookie);
-  }
-},
-render(){
-  this.calcCookiesPerHour();
-  var unorderedList = document.getElementById('seattle');
-  // console.log(unorderedList);
-  for(var i = 0; i < opHours.length; i++){
-    var listItem = document.createElement('li');
-    listItem.textContent = opHours[i] + ': ' + this.cookiesPerHour[i] + ' cookies!';
-    unorderedList.appendChild(listItem);
-  }
-    listItem = document.createElement('li');
-    listItem.textContent = 'Total ' + this.totalCookie + ' cookie!'
-    unorderedList.appendChild(listItem);
+  hourlyCust: function (){
+    for (var i = 0; i < opHours.length; i++) {
+      this.custPerHour.push(random(this.minCust,this.maxCust));
     }
+  },
+  calcCookiesPerHour: function() {
+    this.hourlyCust();
+    for (var i = 0; i < opHours.length; i++) {
+      var hourTotal = Math.ceil(this. custPerHour[i] * this.avgSale);
+      this.cookiesPerHour.push(hourTotal);
+      console.log(this.cookiesPerHour);
+      this.totalCookie = this.totalCookie + hourTotal;
+      console.log('total cookies',this.totalCookie);
+    }
+  },
+  render(){
+    this.calcCookiesPerHour();
+    var unorderedList = document.getElementById('seattle');
+    // console.log(unorderedList);
+    for(var i = 0; i < opHours.length; i++){
+      var listItem = document.createElement('li');
+      listItem.textContent = opHours[i] + ': ' + this.cookiesPerHour[i] + ' cookies!';
+      unorderedList.appendChild(listItem);
+    }
+    listItem = document.createElement('li');
+    listItem.textContent = 'Total ' + this.totalCookie + ' cookie!';
+    unorderedList.appendChild(listItem);
+  }
 };
 storeTokyo.render();
 var storeDubia = {
@@ -89,7 +89,7 @@ var storeDubia = {
   cookiesPerHour: [],
   custPerHour: [],
   totalCookie: 0,
-}; 
+};
 var storeParis = {
   city: 'Paris',
   minCust: 20,
@@ -98,7 +98,7 @@ var storeParis = {
   cookiesPerHour: [],
   custPerHour: [],
   totalCookie: 0,
-}; 
+};
 var storeLima = {
   city: 'Lima',
   minCust: 2,
@@ -107,7 +107,7 @@ var storeLima = {
   cookiesPerHour: [],
   custPerHour: [],
   totalCookie: 0,
-}; 
+};
 function random(min, max){
   // console.log(min, max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
