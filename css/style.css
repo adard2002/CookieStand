@@ -4,12 +4,22 @@
 }
 
 h1 {
+  color: #63474D;
+  background-color: #FFA686;
   text-align: center;
+  text-shadow: 5px 5px 5px ;
   font-size: 38px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
+img {
+  height: 61px;
+  width: 196px;
+}
+body {
+  background-color: #FEC196;
+}
 p {
   font-size: 50px;
 }
@@ -22,4 +32,34 @@ table, th {
   padding-left: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
+  outline-style: solid;
 }
+
+table, tr {
+  text-align: center;
+  font-size: 20px;
+  margin: auto;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  outline-style: solid;
+}
+
+table, td {
+  text-align: center;
+  font-size: 20px;
+  margin: auto;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  outline-style: solid;
+}
+/* ---COLORS---
+#63474D (Rose Ebony) 
+#AA767C (Old Rose)
+#D6A184 (Antique Brass)
+#FFA686 (Light Salmon)
+#FEC196 (Macoroni and Cheese 
+*/
