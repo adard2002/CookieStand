@@ -4,7 +4,7 @@ console.log('Pet Adoption project go!');
 
 // Problem Domain: the Cedar Rapids Kitten Rescue has tons of kittens who need good homes. One of the best ways to reach prospective adoptive homes is to have profiles for each kitten available on a website. There are hundreds of kittens, though, and only a few volunteers; it's too time-consuming to hand-code each kitten's profile on their website. They need a better way.
 
-//Each Kitten's profile should have: 
+//Each Kitten's profile should have:
 // Name
 // Breed
 // - gender   -- isFixed.
@@ -17,16 +17,16 @@ console.log('Pet Adoption project go!');
 
 //object literal
 var petOne = {
-      name: 'Fluffy',
-      breed: 'tabby',
-      imageName: 'diabloBlanco',
-      interests: ['Sun light','Mouse Toys','Red Dot'],
-      isGoodWithKids: false,
-      isGoodWithDogs: true,
-      isGoodWithCats: false,
-      setAge: function(){
-        this.age = randomAge(3,12) + ' Months old.';
-      }
+  name: 'Fluffy',
+  breed: 'tabby',
+  imageName: 'diabloBlanco',
+  interests: ['Sun light','Mouse Toys','Red Dot'],
+  isGoodWithKids: false,
+  isGoodWithDogs: true,
+  isGoodWithCats: false,
+  setAge: function(){
+    this.age = randomAge(3,12) + ' Months old.';
+  }
 };
 
 petOne.setAge();
@@ -52,7 +52,7 @@ petTwo.setAge();
 function randomAge(min, max){
   return Math.floor(Math.random() * (max - min) + min);
 }
-// off the wall add of key value pair to object literal after object was created 
+// off the wall add of key value pair to object literal after object was created
 petOne.isFixed = true;
 petTwo.isFixed = false;
 
@@ -109,4 +109,4 @@ article.appendChild(petOneImg);
 
 
 // <img />
-// </article> 
+// </article>

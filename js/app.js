@@ -1,5 +1,5 @@
 'use script';
-console.log('Fishes of Salmon Cookies');
+console.log('Salmon Cookies JS should be working');
 var opHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm'];
 
 function random(min, max){
@@ -19,6 +19,14 @@ function Shop(city, minCust, maxCust, avgCookie){
   this.custPerHour = [];
 }
 
+// cust per hour
+Shop.prototype.calcCustPerHour = function(){
+  for (var i = 0; i < opHours.length; i++) {
+    this.custPerHour.push(random(this.minCust,this.maxCust));
+  }
+  console.log(this.custPerHour);
+};
+
 // cookies per hour
 Shop.prototype.calcCookiePerHour = function(){
   this.calcCustPerHour();
@@ -27,12 +35,11 @@ Shop.prototype.calcCookiePerHour = function(){
     this.cookiesPerHour.push(hourTotal);
   }
   console.log(this.cookiePerHour);
-}
+};
 
-
+var shopTable = document.getElementById('cookieStand-holder');
 
 function tableHeader(){
-  var shopTable = document.getElementById('cookieStand-holder');
   var shopRow = document.createElement('tr');
   // create element
   var tableHeader = document.createElement('th');
@@ -42,20 +49,28 @@ function tableHeader(){
   for (var i = 0; i < opHours.length; i++){
     var openHours = document.createElement('th');
     openHours.textContent = opHours[i];
-    console.log(opHours);
+    shopRow.appendChild(openHours);
   }
   shopTable.appendChild(shopRow);
 }
 
+tableHeader();
 
-
-
-// cust per hour
-Shop.prototype.calcCustPerHour = function(){
-  for (var i = 0; i < opHours.length; i++) {
-    this.custPerHour.push(random(this.minCust,this.maxCust));
+Shop.prototype.render = function(){
+  this.calcCookiePerHour();
+  var shopRowOne = document.createElement('tr');
+  var shopData = document.createElement('td');
+  var shopRow = document.createElement('tr');
+  for (var i = 0; i < opHours.length; i++){
+    var openHours = document.createElement('tr');
+    openHours.textContent = this.calcCookiePerHour[i];
+    shopRow.appendChild(openHours);
   }
-  console.log(this.custPerHour);
+  shopData.textContent = this.city;
+  shopRowOne.appendChild(shopData);
+  shopTable.appendChild(shopRowOne);
+  shopTable.appendChild(shopRow);
+  console.log(this.city);
 };
 
 
@@ -81,13 +96,4 @@ function randomMax(min, max){
 
 
 
-// render prototype
-Shop.prototype.render = function(){
-  // Grab the parent element
-  // create the child elements article, h2, p, ul, li, interests and image
-  var parentElement = document.getElementById('cookieShops');
-
-  // ------- Table -------
-
-};
 

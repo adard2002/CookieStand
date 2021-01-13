@@ -81,33 +81,33 @@ var storeTokyo = {
   }
 };
 storeTokyo.render();
-var storeDubia = {
-  city: 'Dubia',
-  minCust: 11,
-  maxCust: 38,
-  avgSale: 3.7,
-  cookiesPerHour: [],
-  custPerHour: [],
-  totalCookie: 0,
-};
-var storeParis = {
-  city: 'Paris',
-  minCust: 20,
-  maxCust: 38,
-  avgSale: 2.3,
-  cookiesPerHour: [],
-  custPerHour: [],
-  totalCookie: 0,
-};
-var storeLima = {
-  city: 'Lima',
-  minCust: 2,
-  maxCust: 16,
-  avgSale: 4.6,
-  cookiesPerHour: [],
-  custPerHour: [],
-  totalCookie: 0,
-};
+// var storeDubia = {
+//   city: 'Dubia',
+//   minCust: 11,
+//   maxCust: 38,
+//   avgSale: 3.7,
+//   cookiesPerHour: [],
+//   custPerHour: [],
+//   totalCookie: 0,
+// };
+// var storeParis = {
+//   city: 'Paris',
+//   minCust: 20,
+//   maxCust: 38,
+//   avgSale: 2.3,
+//   cookiesPerHour: [],
+//   custPerHour: [],
+//   totalCookie: 0,
+// };
+// var storeLima = {
+//   city: 'Lima',
+//   minCust: 2,
+//   maxCust: 16,
+//   avgSale: 4.6,
+//   cookiesPerHour: [],
+//   custPerHour: [],
+//   totalCookie: 0,
+// };
 function random(min, max){
   // console.log(min, max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -116,4 +116,4 @@ function random(min, max){
 function random(min, max){
 
   return Math.floor(Math.random() * (max - min + 1)) + min;
-};
+}
