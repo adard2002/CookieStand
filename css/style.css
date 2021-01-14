@@ -1,24 +1,77 @@
 * {
-  outline-style: dotted;
+  /* outline-style: dotted; */
   margin: auto;
 }
 
-h1 {
+/* h1 {
   color: #63474D;
   background-color: #FFA686;
   text-align: center;
-  text-shadow: 5px 5px 5px ;
+  text-shadow: 5px 5px 5px;
   font-size: 38px;
   padding-top: 10px;
   padding-bottom: 10px;
+  height: 50px;
+} */
+/* --- NAV --- */
+nav ul{
+  background-color: #FFA686;
+  padding-bottom: 35px;
+  padding-top: 35px;
+  display: flex;
+  justify-content: space-around; /* nicely spaces out the nav links */
+  margin-bottom: 15px;
 }
 
-img {
-  height: 61px;
-  width: 196px;
+a:hover {
+  background-color: #c98167;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-right: 45px;
+  padding-left: 45px;
 }
+
+a:active {
+
+}
+
+
+
+/* --- IMAGES --- */
+img {
+  background-color: #FFA686;
+  height: 70px;
+  width: 200px;
+  padding-bottom: 15px;
+  float: left;
+}
+
+img.One {
+
+}
+
+img.Two {
+width: ;
+}
+
+img.Three {
+  
+}
+
+img.Four {
+
+}
+
+
+
+
+
+
+
+
 body {
   background-color: #FEC196;
+  background-size: auto;
 }
 p {
   font-size: 50px;
@@ -55,6 +108,12 @@ table, td {
   padding-top: 5px;
   padding-bottom: 5px;
   outline-style: solid;
+}
+
+footer {
+  background-color: #FFA686;
+  height: 150px;
+  /* margin-top: -200px; */
 }
 /* ---COLORS---
 #63474D (Rose Ebony) 

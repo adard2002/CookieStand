@@ -77,6 +77,8 @@ Shop.prototype.render = function(){
   // TODO: keep count of total cookies
 };
 
+
+// creates an empty array for the shops to be added to, so that we can iterate through them to grab their information to populate the table
 // creates an empty array for the shops to be added to, so that we can iterate through them to grab their information to populate the table 
 Shop.allShops = [];
 // Creating each shop
@@ -90,7 +92,11 @@ new Shop('Lima', 2, 16, 4.6);
 (function renderTable() {
   // calling the table header to be created here
   tableHeader();
+
+  // then iterating over the allShops array
+
   // then iterating over the allShops array 
+
   for (var i = 0; i < opHours.length; i++) {
     // calling the render function from line 61 for each shop
     Shop.allShops[i].render();
