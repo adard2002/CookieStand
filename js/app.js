@@ -17,6 +17,8 @@ function Shop(city, minCust, maxCust, avgCookie){
   this.cookiesPerHour = [];
   this.totalCookie = 0;
   this.custPerHour = [];
+  // pushes each shop to the allShops array
+  Shop.allShops.push(this);
 }
 
 // cust per hour
@@ -54,7 +56,7 @@ function tableHeader(){
   shopTable.appendChild(shopRow);
 }
 
-tableHeader();
+// TODO: make a function that creates the Footer Row for all of your totals for all locations each hour (this is in the video)
 
 Shop.prototype.render = function(){
   this.calcCookiePerHour();
@@ -71,8 +73,30 @@ Shop.prototype.render = function(){
   shopTable.appendChild(shopRowOne);
   shopTable.appendChild(shopRow);
   console.log(this.city);
+  // TODO: Add table stuff to append the cookie calculations to the page
+  // TODO: keep count of total cookies
 };
 
+// creates an empty array for the shops to be added to, so that we can iterate through them to grab their information to populate the table
+Shop.allShops = [];
+// Creating each shop
+new Shop('Seattle', 23, 65, 6.3);
+new Shop('Tokyo', 3, 24, 1.2);
+new Shop('Dubai', 11, 38, 3.7);
+new Shop('Paris', 20, 38, 2.3);
+new Shop('Lima', 2, 16, 4.6);
+
+// this is where the magic happens
+(function renderTable() {
+  // calling the table header to be created here
+  tableHeader();
+  // then iterating over the allShops array
+  for (var i = 0; i < opHours.length; i++) {
+    // calling the render function from line 61 for each shop
+    Shop.allShops[i].render();
+  }
+  // TODO: call the Footer Row function here
+})();
 
 // prototype for min
 Shop.prototype.setMin = function(){
