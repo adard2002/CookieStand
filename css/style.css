@@ -21,6 +21,7 @@ nav ul{
   display: flex;
   justify-content: space-around; /* nicely spaces out the nav links */
   margin-bottom: 15px;
+  color: #AA767C;
 }
 
 a:hover {
@@ -32,7 +33,11 @@ a:hover {
 }
 
 a:active {
-
+  background-color: #c98167;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-right: 45px;
+  padding-left: 45px;
 }
 
 
@@ -42,32 +47,9 @@ img {
   background-color: #FFA686;
   height: 70px;
   width: 200px;
-  padding-bottom: 15px;
+  padding-bottom: 16px;
   float: left;
 }
-
-img.One {
-
-}
-
-img.Two {
-width: ;
-}
-
-img.Three {
-  
-}
-
-img.Four {
-
-}
-
-
-
-
-
-
-
 
 body {
   background-color: #FEC196;
@@ -113,7 +95,7 @@ table, td {
 footer {
   background-color: #FFA686;
   height: 150px;
-  /* margin-top: -200px; */
+  margin-top: 15px;
 }
 /* ---COLORS---
 #63474D (Rose Ebony) 
