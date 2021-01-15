@@ -85,7 +85,9 @@ Shop.prototype.render = function(){
 
 };
 
+
 // creates an empty array for the shops to be added to, so that we can iterate through them to grab their information to populate the table
+// creates an empty array for the shops to be added to, so that we can iterate through them to grab their information to populate the table 
 Shop.allShops = [];
 // Creating each shop
 
