@@ -1,9 +1,9 @@
-'use script';
+'use strict';
 console.log('Salmon Cookies JS should be working');
 var opHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm'];
 
 var shopTable = document.getElementById('cookieStand-holder');
-console.log(shopTable);
+// console.log(shopTable);
 
 // ------- constructor function --------
 
@@ -19,28 +19,31 @@ function Shop(city, minCust, maxCust, avgCookie){
   Shop.allShops.push(this);
 }
 
-function random(min, max){
-  // console.log(min, max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
 // cust per hour
 Shop.prototype.calcCustPerHour = function(){
   for (var i = 0; i < opHours.length; i++) {
     this.custPerHour.push(random(this.minCust,this.maxCust));
   }
-  // console.log(this.custPerHour);
+  console.log(this.custPerHour);
 };
-
-// cookies per hour
+// cookies per hour based on cust count?
 Shop.prototype.calcCookiePerHour = function(){
   this.calcCustPerHour();
   for (var i = 0; i < opHours.length; i++) {
-    var hourTotal = Math.ceil(this. custPerHour[i] * this.avgSale);
+    var hourTotal = Math.ceil(this.custPerHour[i] * this.avgSale);
     this.cookiesPerHour.push(hourTotal);
+    this.totalCookie += hourTotal;
   }
-  // console.log(this.cookiePerHour);
+  // console.log(this.calcCookiePerHour);
 };
+
+function random(min, max){
+  // console.log(min, max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+
 
 function tableHeader(){
   var shopRow = document.createElement('tr');
@@ -61,29 +64,30 @@ function tableHeader(){
 
 // TODO: make a function that creates the Footer Row for all of your totals for all locations each hour (this is in the video)
 
+
 function footerRow() {
   var shopRow = document.createElement('tr');
   var tableHeader = document.createElement('th');
   tableHeader.textContent = 'Hourly Total';
   shopRow.appendChild(tableHeader);
-  var totalOfTotals = 0;
-  var hourlyTotal = 0;
+  var dailyCookie = 0;
+  var hourlyCookie = 0;
   for (var i = 0; i < opHours.length; i++) {
-    var hourlyTotal = 0;
-    for (var x = 0; x < Shop.allShops.length; x++){
-      hourlyTotal += Shop.allShops[x].cookiesPerHour[i];
-      totalOfTotals += Shop.allShops[x].cookiesPerHour[i];
+    dailyCookie = 0;
+    for (var x = 0; x < Shop.length; x++){
+      dailyCookie += Shop.allShops[x].cookiesPerHour[i];
+      hourlyCookie += Shop.allShops[x].cookiesPerHour[i];
     }
     tableHeader = document.createElement('th');
-    tableHeader.textContent = hourlyTotal;
+    tableHeader.textContent = dailyCookie;
     shopRow.appendChild(tableHeader);
   }
   tableHeader = document.createElement('th');
-  tableHeader.textContent = totalOfTotals;
+  tableHeader.textContent = hourlyCookie;
   shopRow.appendChild(tableHeader);
   shopTable.appendChild(shopRow);
 }
-
+// console.log(footerRow);
 
 
 Shop.prototype.render = function(){
@@ -105,17 +109,17 @@ Shop.prototype.render = function(){
   // TODO: Add table stuff to append the cookie calculations to the page
 
   // TODO: keep count of total cookies 15:46?
-  
+
 };
 
 
-// creates an empty array for the shops to be added to, so that we can iterate through them to grab their information to populate the table
+
+
+
 // creates an empty array for the shops to be added to, so that we can iterate through them to grab their information to populate the table
 Shop.allShops = [];
 // Creating each shop
 
-
-// prototype for min
 
 new Shop('Seattle', 23, 65, 6.3);
 new Shop('Tokyo', 3, 24, 1.2);
@@ -133,7 +137,7 @@ Shop.renderTable = function() {
     Shop.allShops[i].render();
   }
   // TODO: call the Footer Row function here
-  // tableFooter();
+  footerRow();
 };
 
 
