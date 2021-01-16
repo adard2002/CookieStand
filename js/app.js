@@ -2,10 +2,8 @@
 console.log('Salmon Cookies JS should be working');
 var opHours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm'];
 
-function random(min, max){
-  // console.log(min, max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+var shopTable = document.getElementById('cookieStand-holder');
+console.log(shopTable);
 
 // ------- constructor function --------
 
@@ -21,12 +19,17 @@ function Shop(city, minCust, maxCust, avgCookie){
   Shop.allShops.push(this);
 }
 
+function random(min, max){
+  // console.log(min, max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 // cust per hour
 Shop.prototype.calcCustPerHour = function(){
   for (var i = 0; i < opHours.length; i++) {
     this.custPerHour.push(random(this.minCust,this.maxCust));
   }
-  console.log(this.custPerHour);
+  // console.log(this.custPerHour);
 };
 
 // cookies per hour
@@ -36,10 +39,8 @@ Shop.prototype.calcCookiePerHour = function(){
     var hourTotal = Math.ceil(this. custPerHour[i] * this.avgSale);
     this.cookiesPerHour.push(hourTotal);
   }
-  console.log(this.cookiePerHour);
+  // console.log(this.cookiePerHour);
 };
-
-var shopTable = document.getElementById('cookieStand-holder');
 
 function tableHeader(){
   var shopRow = document.createElement('tr');
@@ -53,24 +54,46 @@ function tableHeader(){
     openHours.textContent = opHours[i];
     shopRow.appendChild(openHours);
   }
+  tableHeader.textContent = 'Total Cookies';
+  shopRow.appendChild(tableHeader);
   shopTable.appendChild(shopRow);
 }
 
 // TODO: make a function that creates the Footer Row for all of your totals for all locations each hour (this is in the video)
-// function tableFooter(){
-// var shopRow = document.createElement('tr');
-// var shopData = document.createElement('td');
-// var tableFooterHeader = document.createElement('th');
 
-// }
+function footerRow() {
+  var shopRow = document.createElement('tr');
+  var tableHeader = document.createElement('th');
+  tableHeader.textContent = 'Hourly Total';
+  shopRow.appendChild(tableHeader);
+  var totalOfTotals = 0;
+  var hourlyTotal = 0;
+  for (var i = 0; i < opHours.length; i++) {
+    var hourlyTotal = 0;
+    for (var x = 0; x < Shop.allShops.length; x++){
+      hourlyTotal += Shop.allShops[x].cookiesPerHour[i];
+      totalOfTotals += Shop.allShops[x].cookiesPerHour[i];
+    }
+    tableHeader = document.createElement('th');
+    tableHeader.textContent = hourlyTotal;
+    shopRow.appendChild(tableHeader);
+  }
+  tableHeader = document.createElement('th');
+  tableHeader.textContent = totalOfTotals;
+  shopRow.appendChild(tableHeader);
+  shopTable.appendChild(shopRow);
+}
+
+
 
 Shop.prototype.render = function(){
   this.calcCookiePerHour();
   var shopRowOne = document.createElement('tr');
+  // console.log(shopRowOne);
   var shopData = document.createElement('td');
   var shopRow = document.createElement('tr');
   for (var i = 0; i < opHours.length; i++){
-    var openHours = document.createElement('tr');
+    var openHours = document.createElement('td');
     openHours.textContent = this.calcCookiePerHour[i];
     shopRow.appendChild(openHours);
   }
@@ -78,39 +101,22 @@ Shop.prototype.render = function(){
   shopRowOne.appendChild(shopData);
   shopTable.appendChild(shopRowOne);
   shopTable.appendChild(shopRow);
-  console.log(this.city);
+  // console.log(this.city);
   // TODO: Add table stuff to append the cookie calculations to the page
 
-  // TODO: keep count of total cookies
-
+  // TODO: keep count of total cookies 15:46?
+  
 };
 
 
 // creates an empty array for the shops to be added to, so that we can iterate through them to grab their information to populate the table
-// creates an empty array for the shops to be added to, so that we can iterate through them to grab their information to populate the table 
+// creates an empty array for the shops to be added to, so that we can iterate through them to grab their information to populate the table
 Shop.allShops = [];
 // Creating each shop
 
 
 // prototype for min
-Shop.prototype.setMin = function(){
-  this.minCust = randomMin(1,23);
-};
 
-// creates random min
-function randomMin(min, max){
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-// prototype for max
-Shop.prototype.setMax = function(){
-  this.maxCust = randomMax(23,65);
-};
-
-// creates random max
-function randomMax(min, max){
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
 new Shop('Seattle', 23, 65, 6.3);
 new Shop('Tokyo', 3, 24, 1.2);
 new Shop('Dubai', 11, 38, 3.7);
