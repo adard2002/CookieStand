@@ -1,7 +1,12 @@
 * {
   /* outline-style: dotted; */
   margin: auto;
+  font-family: 'Caveat', cursive;
+  /* font-family: Arial, Helvetica, sans-serif; */
 }
+
+
+
 
 /* h1 {
   color: #63474D;
@@ -85,18 +90,33 @@ table, td {
 }
 
 button {
-  
+  font-size: 23px;
 }
 
+form {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 350px;
+}
 
-
-
+legend {
+  margin-bottom: 25px;
+  font-size: 25px;
+  text-decoration: underline;
+}
 
 footer {
   color: black;
+  font-size: 25px;
+  text-align: center;
   background-color: rgb(149, 160, 255);
-  height: 150px;
+  height: 140px;
   margin-top: 15px;
+}
+
+footer li {
+  margin-top: 40px;
 }
 /* ---COLORS---
 #63474D (Rose Ebony) 
