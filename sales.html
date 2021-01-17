@@ -12,12 +12,12 @@
     <header>
         <!-- <h1>Salmon Cookies!</h1> -->
         <nav>
-            <img src="images/salmon.png">
+            <img src="images/salmon.png" alt="salmonLogo">
           <ul>
             <li><a href="index.html">Home Page</a></li>
-            <li><a href="navItemOne.html">Nav Item 1</a></li>
-            <li><a href="navItemTwo.html">Nav Item 2</a></li>
-            <li><a href="navItemThree.html">Nav Item 3</a></li>
+            <li><a href="sales.html">Sales Page</a></li>
+            <li><a href="navItemOne.html">Nav Item 2</a></li>
+            <li><a href="navItemTwo.html">Nav Item 3</a></li>
           </ul>
         </nav>
     </header>
@@ -35,7 +35,6 @@
           </article> -->
         </section>
         <!-- Add a Table -->
-
         <!-- <div id="cookieStand-holder" class="cookieStandDiv"></div> -->
         <table id="cookieStand-holder">
           <thead id="tbody">
@@ -45,6 +44,37 @@
           <tfoot id="tfooter">
           </tfoot>
         </table>
+
+        <!-- form -->
+        <form id="newLocation">
+          <fieldset>
+            <legend>Add new city to the Cookie Sale!</legend>
+            <label for="city">City Name:</label>
+            <input id="city" type="text" required />
+            <label for="minCustomer">Min Customer(s):</label>
+            <input id="minCustomer" type="text" required />
+            <label for="maxCustomer">Max Customer:</label>
+            <input id="imageName" type="text" required />
+            <label for="avgCookies">avg. Cookies An Hour</label>
+            <input id="avgCookies" type="text" required />
+          </fieldset>
+          <fieldset>
+            <legend>Placement Information</legend>
+            <p>Can be placed with....</p>
+            <label>Good with Kids</label>
+            <input id="kids" name="isGoodWithKids" type="checkbox" />
+            
+            <label>Good with Dogs</label>
+            <input id="dogs" name="isGoodWithDogs" type="checkbox" />
+
+            <label>Good with Cats</label>
+            <input id="cats" name="isGoodWithCats" type="checkbox" />
+
+          </fieldset>
+          <button type="reset" value="Reset">Reset Fields</button>
+          <button id="submit">Submit</button>
+
+        </form>
 
 
 
