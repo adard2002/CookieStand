@@ -15,7 +15,7 @@
 } */
 /* --- NAV --- */
 nav ul{
-  background-color: #957D95;
+  background-color:rgb(149, 160, 255);
   padding-bottom: 35px;
   padding-top: 35px;
   display: flex;
@@ -26,7 +26,7 @@ nav ul{
 
 /* --- IMAGES --- */
 img {
-  background-color: #957D95;
+  background-color:rgb(149, 160, 255);
   height: 70px;
   width: 200px;
   padding-bottom: 16px;
@@ -34,7 +34,7 @@ img {
 }
 
 body {
-  background-color: #c7876f;
+  background-color: #e9baa8;
   background-size: auto; 
 }
 p {
@@ -53,8 +53,15 @@ table, th {
   outline-style: solid;
 }
 
+
+
+table th {
+  background-color:rgb(149, 160, 255);
+}
+
 table, tr {
   color: black;
+  background-color: rgb(247, 212, 204);
   text-align: center;
   font-size: 20px;
   margin: auto;
@@ -87,7 +94,7 @@ button {
 
 footer {
   color: black;
-  background-color: #957D95;
+  background-color: rgb(149, 160, 255);
   height: 150px;
   margin-top: 15px;
 }
