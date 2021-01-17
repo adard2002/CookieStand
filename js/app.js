@@ -172,14 +172,8 @@ function handleFormSubmitted(event){
   var avgCookiesInput = document.getElementById('avgCookies');
   var avgCookiesValue = avgCookiesInput.value; // another way of doing what is done on lines 165 and 162 (var maxCustomerValue = maxCustomerInput['value']);)
 
-
-  var isGoodWithKids = event.target.isGoodWithKids.checked;
-  var isGoodWithDogs = event.target.isGoodWithDogs.checked;
-  var isGoodWithCats = event.target.isGoodWithCats.checked;
-
-
   // get new shop object
-  var newShop = new Shop(cityValue, minCustomerValue, maxCustomerValue, avgCookiesValue, isGoodWithKids, isGoodWithDogs, isGoodWithCats);
+  var newShop = new Shop(cityValue, minCustomerValue, maxCustomerValue, avgCookiesValue);
   console.log(newShop);
 
   // make use of our prototypes
@@ -188,7 +182,7 @@ function handleFormSubmitted(event){
   newShop.render();
 
 
-  var form = document.getElementById('new-pets');
+  var form = document.getElementById('new-Location');
   form.reset();
 
 
