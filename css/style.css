@@ -15,36 +15,18 @@
 } */
 /* --- NAV --- */
 nav ul{
-  background-color: #FFA686;
+  background-color:rgb(149, 160, 255);
   padding-bottom: 35px;
   padding-top: 35px;
   display: flex;
   justify-content: space-around; /* nicely spaces out the nav links */
   margin-bottom: 15px;
-  color: #AA767C;
 }
-
-a:hover {
-  background-color: #c98167;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  padding-right: 45px;
-  padding-left: 45px;
-}
-
-a:active {
-  background-color: #c98167;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  padding-right: 45px;
-  padding-left: 45px;
-}
-
 
 
 /* --- IMAGES --- */
 img {
-  background-color: #FFA686;
+  background-color:rgb(149, 160, 255);
   height: 70px;
   width: 200px;
   padding-bottom: 16px;
@@ -52,14 +34,15 @@ img {
 }
 
 body {
-  background-color: #FEC196;
-  background-size: auto;
+  background-color: #f1b8a3;
+  background-size: auto; 
 }
 p {
   font-size: 50px;
 }
 
 table, th {
+  color: black;
   text-align: center;
   font-size: 20px;
   margin: auto;
@@ -70,7 +53,15 @@ table, th {
   outline-style: solid;
 }
 
+
+
+table th {
+  background-color:rgb(149, 160, 255);
+}
+
 table, tr {
+  color: black;
+  background-color: rgb(250, 190, 175);
   text-align: center;
   font-size: 20px;
   margin: auto;
@@ -82,6 +73,7 @@ table, tr {
 }
 
 table, td {
+  color: black;
   text-align: center;
   font-size: 20px;
   margin: auto;
@@ -92,8 +84,17 @@ table, td {
   outline-style: solid;
 }
 
+button {
+  
+}
+
+
+
+
+
 footer {
-  background-color: #FFA686;
+  color: black;
+  background-color: rgb(149, 160, 255);
   height: 150px;
   margin-top: 15px;
 }
