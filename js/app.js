@@ -108,6 +108,8 @@ Shop.prototype.render = function(){
   // console.log(this.city);
   // TODO: Add table stuff to append the cookie calculations to the page
 
+
+
   // TODO: keep count of total cookies 15:46?
 
 };
@@ -144,3 +146,64 @@ Shop.renderTable = function() {
 Shop.renderTable();
 
 
+
+
+
+
+// ----------- This is the form ----------------
+// Take in an event parameter so that that we can prevent the default
+
+function handleFormSubmitted(event){
+  event.preventDefault();
+  console.log(event);
+  var cityInput = document.getElementById('city');
+  console.log(cityInput);
+  var cityValue = cityInput['value'];
+  console.log(cityInput['value']);
+  console.log(cityValue);
+
+  var minCustomerInput = document.getElementById('minCustomer');
+  var minCustomerValue = minCustomerInput['value'];
+
+  var maxCustomerInput = document.getElementById('imageName');
+  var maxCustomerValue = maxCustomerInput['value'];
+  console.log(cityInput.value);
+
+  var avgCookiesInput = document.getElementById('avgCookies');
+  var avgCookiesValue = avgCookiesInput.value; // another way of doing what is done on lines 165 and 162 (var maxCustomerValue = maxCustomerInput['value']);)
+
+
+  var isGoodWithKids = event.target.isGoodWithKids.checked;
+  var isGoodWithDogs = event.target.isGoodWithDogs.checked;
+  var isGoodWithCats = event.target.isGoodWithCats.checked;
+
+
+  // get new shop object
+  var newShop = new Shop(cityValue, minCustomerValue, maxCustomerValue, avgCookiesValue, isGoodWithKids, isGoodWithDogs, isGoodWithCats);
+  console.log(newShop);
+
+  // make use of our prototypes
+  newShop.calcCustPerHour();
+  newShop.calcCookiePerHour();
+  newShop.render();
+
+
+  var form = document.getElementById('new-pets');
+  form.reset();
+
+
+
+} //closing the handleFormSubmitted function
+
+
+
+
+// Set up the event listener to listen to the submit event.
+// 1. Which element do we need
+var formElement = document.getElementById('new-Shops');
+
+// 2. Which event am I listening for?
+
+
+// 3. What code should I run when that event happens?
+formElement.addEventListener('submit', handleFormSubmitted);

@@ -15,36 +15,18 @@
 } */
 /* --- NAV --- */
 nav ul{
-  background-color: #FFA686;
+  background-color: #957D95;
   padding-bottom: 35px;
   padding-top: 35px;
   display: flex;
   justify-content: space-around; /* nicely spaces out the nav links */
   margin-bottom: 15px;
-  color: #AA767C;
 }
-
-a:hover {
-  background-color: #c98167;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  padding-right: 45px;
-  padding-left: 45px;
-}
-
-a:active {
-  background-color: #c98167;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  padding-right: 45px;
-  padding-left: 45px;
-}
-
 
 
 /* --- IMAGES --- */
 img {
-  background-color: #FFA686;
+  background-color: #957D95;
   height: 70px;
   width: 200px;
   padding-bottom: 16px;
@@ -52,8 +34,8 @@ img {
 }
 
 body {
-  background-color: #FEC196;
-  background-size: auto;
+  background-color: #c7876f;
+  background-size: auto; 
 }
 p {
   font-size: 50px;
@@ -95,9 +77,17 @@ table, td {
   outline-style: solid;
 }
 
+button {
+  
+}
+
+
+
+
+
 footer {
   color: black;
-  background-color: #FFA686;
+  background-color: #957D95;
   height: 150px;
   margin-top: 15px;
 }
